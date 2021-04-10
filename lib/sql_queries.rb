@@ -6,6 +6,7 @@
 
 # Make sure each ruby method returns a string containing a valid SQL statement.
 
+
 def selects_the_titles_of_all_projects_and_their_pledge_amounts_alphabetized_by_title
   "SELECT projects.title, SUM(amount) FROM pledges INNER JOIN projects ON pledges.project_id = projects.id GROUP BY projects.title;"
 end
@@ -29,29 +30,3 @@ end
 def selects_the_category_name_and_the_sum_total_of_the_all_its_pledges_for_the_books_category
   "SELECT projects.category, SUM(pledges.amount) FROM pledges INNER JOIN projects ON pledges.project_id = projects.id WHERE projects.category = 'books'"
 end
-
-
-# SELECT
-# FROM
-# JOIN
-#   ON
-# WHERE
-# GROUP BY
-# HAVING
-# ORDER BY
-# LIMIT 
-
-# SELECT Cats.name, Cats.breed, Owners.name 
-# FROM Cats 
-# INNER JOIN Owners
-# ON Cats.owner_id = Owners.id;
-
-# SELECT column_name(s)
-# FROM first_table
-# INNER JOIN second_table
-# ON first_table.column_name = second_table.column_name; 
-
-# SELECT column_name(s)
-# FROM first_table
-# LEFT [OUTER] JOIN second_table
-# ON first_table.column_name=second_table.column_name;
